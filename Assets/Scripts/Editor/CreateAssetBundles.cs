@@ -4,12 +4,12 @@ using UnityEngine.Windows;
 
 public class CreateAssetBundles : MonoBehaviour
 {
-    private const string AssetBundlesPath = "Assets/Resources/AssetBundles";
+    private const string AssetBundlesPath = "Assets/StreamingAssets";
     
     [MenuItem("Assets/Build AssetBundles")]
     private static void BuildAllAssetBundles()
     {
-        if (!Directory.Exists(AssetBundlesPath))
+        if (!Directory.Exists(Application.streamingAssetsPath))
             Directory.CreateDirectory(AssetBundlesPath);
 
         BuildPipeline.BuildAssetBundles(
