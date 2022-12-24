@@ -1,0 +1,29 @@
+ManifestFileVersion: 0
+CRC: 2677504190
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: aca144957bc9e48172684b9f2318bf54
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Content/Textures/Emotions/gordost.png
+- Assets/Content/Textures/Emotions/shock.png
+- Assets/Content/Textures/Emotions/sad.png
+- Assets/Content/Textures/Emotions/confusion.png
+- Assets/Content/Textures/Emotions/neutral.png
+- Assets/Content/Textures/Emotions/smile.png
+- Assets/Content/Textures/Emotions/flirt.png
+- Assets/Content/Textures/Emotions/angry.png
+- Assets/Content/Textures/Emotions/you_die.png
+- Assets/Content/Textures/Emotions/fuu.png
+- Assets/Content/Textures/Emotions/yazva.png
+Dependencies: []

@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 3033104149
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: hair
+      Dependencies: {}
+    Info_1:
+      Name: clothes
+      Dependencies: {}
+    Info_2:
+      Name: emotions
+      Dependencies: {}
+    Info_3:
+      Name: body
+      Dependencies: {}
