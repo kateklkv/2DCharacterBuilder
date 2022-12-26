@@ -2,17 +2,22 @@ using System;
 using System.Collections.Generic;
 using Runtime.AssetBundles;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Runtime.Customization
 {
-    public class CustomizationService : MonoBehaviour
+    public static class CustomizationService
     {
-        public Dictionary<string, List<Sprite>> SpritesByTypeDictionary { get; } =
+        public static Dictionary<string, List<Sprite>> SpritesByTypeDictionary { get; } =
             new Dictionary<string, List<Sprite>>();
 
-        private void Awake() => GetAllSpritesFromAssetBundles();
+        [RuntimeInitializeOnLoadMethod]
+        private static void Initialize()
+        {
+            GetAllSpritesFromAssetBundles();
+        }
 
-        private void GetAllSpritesFromAssetBundles()
+        private static void GetAllSpritesFromAssetBundles()
         {
             foreach (CustomizationPartType type in (CustomizationPartType[]) Enum.GetValues(typeof(CustomizationPartType)))
             {
@@ -22,6 +27,15 @@ namespace Runtime.Customization
             }
         }
 
-        public List<Sprite> GetSpritesByType(CustomizationPartType type) => SpritesByTypeDictionary[type.ToString()];
+        public static List<Sprite> GetSpritesByType(CustomizationPartType type) => SpritesByTypeDictionary[type.ToString()];
+
+        public static Sprite GetRandomSpriteByType(CustomizationPartType type)
+        {
+            var sprites = GetSpritesByType(type);
+            
+            int randomIndex = Random.Range(0, sprites.Count);
+
+            return sprites[randomIndex];
+        }
     }
 }

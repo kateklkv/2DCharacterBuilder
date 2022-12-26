@@ -5,7 +5,6 @@ namespace Runtime.Customization
 {
     public class CustomizationView : MonoBehaviour
     {
-        [SerializeField] private CustomizationService customizationService;
         [SerializeField] private List<ButtonCustomization> buttons;
         [SerializeField] private List<CustomizationPartView> parts;
 
@@ -19,13 +18,12 @@ namespace Runtime.Customization
 
         private void SetImageInPart(ButtonCustomization button)
         {
-            var sprites = customizationService.GetSpritesByType(button.Type);
-            int randomIndex = Random.Range(0, sprites.Count);
+            var sprite = CustomizationService.GetRandomSpriteByType(button.Type);
             
             parts.ForEach(p =>
             {
                 if (button.Type == p.Type)
-                    p.UpdateImage(sprites[randomIndex]);
+                    p.UpdateImage(sprite);
             });
         }
     }
